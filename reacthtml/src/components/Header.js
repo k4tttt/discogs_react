@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faMagnifyingGlass, faAngleDown, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends React.Component {
     render() {
@@ -13,20 +15,20 @@ class Header extends React.Component {
                     
                     <div className="search">
                         <input id="searchbar" type="text" placeholder="Search artists, albums and more..." />
-                        <i className="fa-solid fa-magnifying-glass"></i>
+                        <FontAwesomeIcon className="fa-solid fa-magnifying-glass" icon={faMagnifyingGlass} />
                     </div>
 
-                    <a className="hamburger" href="javascript:void(0);"><i className="fa-solid fa-bars fa-lg"></i></a>
+                    <a className="hamburger" href="#"><FontAwesomeIcon icon={faBars} size="lg" /></a>
                 </div>
                 
                 <nav className="topnav1">
                     <ul>
                         <li>
-                            <a href="#">Explore<i className="fa-solid fa-angle-down"></i></a>
+                            <a href="#">Explore<FontAwesomeIcon icon={faAngleDown} /></a>
                         </li><li>
-                            <a href="#">Marketplace<i className="fa-solid fa-angle-down"></i></a>
+                            <a href="#">Marketplace<FontAwesomeIcon icon={faAngleDown} /></a>
                         </li><li>
-                            <a href="#">Community<i className="fa-solid fa-angle-down"></i></a>
+                            <a href="#">Community<FontAwesomeIcon icon={faAngleDown} /></a>
                         </li>
                     </ul>
                 </nav>
@@ -34,11 +36,11 @@ class Header extends React.Component {
                 <nav className="topnav2">
                     <ul>
                         <li>
-                            <a href="#"><i className="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#"><FontAwesomeIcon icon={faCartShopping} /></a>
                         </li><li>
                             <a href="#">Log in</a>
                         </li><li>
-                            <button onclick="window.location.href='#';">Register</button>
+                            <button>Register</button>
                         </li>
                     </ul>
                 </nav>

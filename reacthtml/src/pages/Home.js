@@ -1,10 +1,27 @@
 import React from "react";
-import '../styles/styles_artist.css';
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebookF, faSoundcloud, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Config from "../Config.json";
+
+const TITLE = "A. G. Cook | " + Config.SITE_TITLE;
+const AUTHOR = Config.AUTHOR;
 
 class Home extends React.Component {
     render() {
         return (
-        <main>
+        <main id="home">
+            <HelmetProvider>
+                <Helmet>
+                    <title>{TITLE}</title>
+                    <meta charSet="UTF-8" />
+                    <meta name="author" content={AUTHOR} />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                </Helmet>
+            </HelmetProvider>
+
             <figure className="picture">
                 <figcaption><h1>A. G. Cook</h1></figcaption>
                 <img className="responsive" src="images/ag_sun.jpg" alt="A. G. Cook" height="324" width="267" />
@@ -19,7 +36,7 @@ class Home extends React.Component {
                     releasing music within a similar style, in which tropes from mainstream 1990s and 
                     2000s pop music are amplified. This style of exaggerated pop tropes grew to serve as 
                     the foundation of the genre hyperpop, which Cook is credited for developing and 
-                    popularising. <a href="https://en.wikipedia.org/wiki/A._G._Cook" target="_blank">Wikipedia.<br /><br /></a>
+                    popularising. <a href="https://en.wikipedia.org/wiki/A._G._Cook" target="_blank" rel="noreferrer">Wikipedia.<br /><br /></a>
                 </p>
                 
                 <table>
@@ -56,13 +73,13 @@ class Home extends React.Component {
 
             <aside className="ads"></aside>
 
-            <section className="discography">
+            <section className="discography transform">
                 <figure>
                     <figcaption>
-                        <h2><a href="/albums">Albums</a></h2>
+                        <h2><Link to="/albums">Albums</Link></h2>
                     </figcaption>
-                    <a href="a.g.cook/albums.html"><img className="responsive" src="images/albums.png" alt="Albums" height="270" width="270" />
-                    </a>
+                    <Link to="/albums"><img className="responsive" src="images/albums.png" alt="Albums" height="270" width="270" />
+                    </Link>
                 </figure>
 
                 <figure>
@@ -88,14 +105,14 @@ class Home extends React.Component {
             </section>
 
             <nav className="buttons">
-                <button className="button1" onclick="window.location.href='#';">Vinyl and CD<i className="fa-solid fa-angle-right"></i></button>
+                <button className="button1">Vinyl and CD<FontAwesomeIcon icon={faAngleRight} /></button>
                 <ul className="functions">
                     <li>
-                        <button onclick="window.location.href='#';">Lists<i className="fa-solid fa-angle-right"></i></button>
+                        <button>Lists<FontAwesomeIcon icon={faAngleRight} /></button>
                     </li><li>
-                        <button onclick="window.location.href='#';">Reviews<i className="fa-solid fa-angle-right"></i></button>
+                        <button>Reviews<FontAwesomeIcon icon={faAngleRight} /></button>
                     </li><li>
-                        <button onclick="window.location.href='#';">Videos<i className="fa-solid fa-angle-right"></i></button>
+                        <button>Videos<FontAwesomeIcon icon={faAngleRight} /></button>
                     </li>
                 </ul>
             </nav>
@@ -103,15 +120,15 @@ class Home extends React.Component {
             <nav className="external_links">
                 <ul className="links">
                     <li>
-                        <a href="https://www.agcook.com/" target="_blank"><i className="fa-solid fa-link fa-lg"></i></a>
+                        <a href="https://www.agcook.com/" target="_blank" rel="noreferrer"><FontAwesomeIcon className="link_icon" icon={faLink} size="lg" /></a>
                     </li><li>
-                        <a href="https://www.instagram.com/agcook404/" target="_blank"><i className="fa-brands fa-instagram fa-lg"></i></a>
+                        <a href="https://www.instagram.com/agcook404/" target="_blank" rel="noreferrer"><FontAwesomeIcon className="link_icon" icon={faInstagram} size="lg" /></a>
                     </li><li>
-                        <a href="https://www.facebook.com/agcook404/" target="_blank"><i className="fa-brands fa-facebook-f fa-lg"></i></a>
+                        <a href="https://www.facebook.com/agcook404/" target="_blank" rel="noreferrer"><FontAwesomeIcon className="link_icon" icon={faFacebookF} size="lg" /></a>
                     </li><li>
-                        <a href="https://soundcloud.com/agcook" target="_blank"><i className="fa-brands fa-soundcloud fa-lg"></i></a>
+                        <a href="https://soundcloud.com/agcook" target="_blank" rel="noreferrer"><FontAwesomeIcon className="link_icon" icon={faSoundcloud} size="lg" /></a>
                     </li><li>
-                        <a href="https://open.spotify.com/artist/335TWGWGFan4vaacJzSiU8?si=a8YpEcP1Tm-hJxQhZU39wQ" target="_blank"><i className="fa-brands fa-spotify fa-lg"></i></a>
+                        <a href="https://open.spotify.com/artist/335TWGWGFan4vaacJzSiU8?si=a8YpEcP1Tm-hJxQhZU39wQ" target="_blank" rel="noreferrer"><FontAwesomeIcon className="link_icon" icon={faSpotify} size="lg" /></a>
                     </li>
                 </ul>
             </nav>

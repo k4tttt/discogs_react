@@ -1,55 +1,74 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleRight, faAngleLeft, faPlus, faStar, faReply } from '@fortawesome/free-solid-svg-icons';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Config from "../Config.json";
+
+const TITLE = "Apple | A. G. Cook | " + Config.SITE_TITLE;
+const AUTHOR = Config.AUTHOR;
 
 class Apple extends React.Component {
     render() {
         return(
-            <main>
-                <nav class="page_nav">
+            <main id="apple">
+                <HelmetProvider>
+                    <Helmet>
+                        <title>{TITLE}</title>
+                        <meta charSet="UTF-8" />
+                        <meta name="author" content={AUTHOR} />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    </Helmet>
+                </HelmetProvider>
+
+                <nav className="page_nav">
                     <ul>
                         <li>
-                            <a href="../../index.html">A. G. Cook</a>
+                            <a href="../../">A. G. Cook</a>
                         </li><li>
-                            <i class="fa-solid fa-angle-right"></i>
+                            <FontAwesomeIcon icon={faAngleRight} />
                         </li><li>
-                            <a href="../albums.html">Albums</a>
+                            <a href="../albums">Albums</a>
                         </li><li>
-                            <i class="fa-solid fa-angle-right"></i>
+                            <FontAwesomeIcon icon={faAngleRight} />
                         </li><li>
                             <p>Apple</p>
                         </li>
                     </ul>
                 </nav>
 
-                <section class="albuminfo">
+                <section className="albuminfo">
                     <figure>
                         <figcaption><h1>Apple | A. G. Cook</h1></figcaption>
-                        <img class="responsive" src="../../images/apple.jpg" alt="Picture of Apple album cover" height="280" width="280" />
+                        <img className="responsive" src="../../images/apple.jpg" alt="Apple album cover" height="280" width="280" />
                     </figure>
 
                     <table>
-                        <tr>
-                            <td><p class="left_aligned">Release date</p></td>
-                            <td><p class="right_aligned">18 September 2020</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="left_aligned">Genre</p></td>
-                            <td><p class="right_aligned"><a href="https://www.discogs.com/genre/electronic">Electronic</a>, 
-                                <a href="https://www.discogs.com/genre/rock">Rock</a>, 
-                                <a href="https://www.discogs.com/genre/pop">Pop</a></p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="left_aligned">Style</p></td>
-                            <td><p class="right_aligned"><a href="https://www.discogs.com/style/experimental">Experimental</a>, 
-                                <a href="https://www.discogs.com/style/synth-pop">Synth-pop</a>, 
-                                <a href="https://www.discogs.com/style/hyperpop">Hyperpop</a>,
-                                <a href="https://www.discogs.com/style/alternative%20rock">Alternative Rock</a>,
-                                <a href="https://www.discogs.com/style/acoustic">Acoustic</a>,
-                                <a href="https://www.discogs.com/style/indie%20pop">Indie Pop</a></p></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><p className="left_aligned">Release date</p></td>
+                                <td><p className="right_aligned">18 September 2020</p></td>
+                            </tr>
+                            <tr>
+                                <td><p className="left_aligned">Genre</p></td>
+                                <td><p className="right_aligned"><a href="https://www.discogs.com/genre/electronic">
+                                    Electronic</a>, <a href="https://www.discogs.com/genre/rock">
+                                        Rock</a>, <a href="https://www.discogs.com/genre/pop">Pop</a></p></td>
+                            </tr>
+                            <tr>
+                                <td><p className="left_aligned">Style</p></td>
+                                <td><p className="right_aligned"><a href="https://www.discogs.com/style/experimental">
+                                    Experimental</a>, <a href="https://www.discogs.com/style/synth-pop">
+                                        Synth-pop</a>, <a href="https://www.discogs.com/style/hyperpop">
+                                            Hyperpop</a>, <a href="https://www.discogs.com/style/alternative%20rock">
+                                                Alternative Rock</a>, <a href="https://www.discogs.com/style/acoustic">
+                                                    Acoustic</a>, <a href="https://www.discogs.com/style/indie%20pop">Indie Pop</a></p></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </section>
 
-                <section class="tracklist">
+                <section className="tracklist">
                     <h1>Apple | A. G. Cook</h1>
                     <h2>Tracklist</h2>
 
@@ -65,46 +84,46 @@ class Apple extends React.Component {
                     <ul><li><p>Lifeline</p></li><li><p>4:06</p></li></ul>
                 </section>
 
-                <section class="credits">
+                <section className="credits">
                     <h2>Credits</h2>
 
                     <ul>
-                        <li class="credit_item">
-                            <ul class="credit_desc">
+                        <li className="credit_item">
+                            <ul className="credit_desc">
                                 <li>
-                                    <a href="https://www.discogs.com/artist/5792559-Timothy-Luke"><img src="../../images/timothy_luke.jpg" alt="Picture of Timothy Luke" /></a>
+                                    <a href="https://www.discogs.com/artist/5792559-Timothy-Luke"><img src="../../images/timothy_luke.jpg" alt="Timothy Luke" /></a>
                                 </li><li>
                                     <p><a href="https://www.discogs.com/artist/5792559-Timothy-Luke">Timothy Luke</a><br />Art Direction, Artwork</p>
                                 </li>
                             </ul>
-                        </li><li class="credit_item">
-                            <ul class="credit_desc">
+                        </li><li className="credit_item">
+                            <ul className="credit_desc">
                                 <li>
-                                    <a href="https://www.discogs.com/artist/300468-Stuart-Hawkes"><img src="../../images/stuart_hawkes.jpg" alt="Picture of Stuart Hawkes" /></a>
+                                    <a href="https://www.discogs.com/artist/300468-Stuart-Hawkes"><img src="../../images/stuart_hawkes.jpg" alt="Stuart Hawkes" /></a>
                                 </li><li>
                                     <p><a href="https://www.discogs.com/artist/300468-Stuart-Hawkes">Stuart Hawkes</a><br />Mastered by</p>
                                 </li>
                             </ul>
-                        </li><li class="credit_item">
-                            <ul class="credit_desc">
+                        </li><li className="credit_item">
+                            <ul className="credit_desc">
                                 <li>
-                                    <a href="https://www.discogs.com/artist/3269967-Geoff-Swan"><img src="../../images/geoff_swan.jpg" alt="Picture of Geoff Swan" /></a>
+                                    <a href="https://www.discogs.com/artist/3269967-Geoff-Swan"><img src="../../images/geoff_swan.jpg" alt="Geoff Swan" /></a>
                                 </li><li>
                                     <p><a href="https://www.discogs.com/artist/3269967-Geoff-Swan">Geoff Swan</a><br />Mixed by</p>
                                 </li>
                             </ul>
-                        </li><li class="credit_item">
-                            <ul class="credit_desc">
+                        </li><li className="credit_item">
+                            <ul className="credit_desc">
                                 <li>
-                                    <a href="https://www.discogs.com/artist/4933932-Niko-Battistini"><img src="../../images/profile.png" alt="Fallback profile image" /></a>
+                                    <a href="https://www.discogs.com/artist/4933932-Niko-Battistini"><img src="../../images/profile.png" alt="Fallback profile icon" /></a>
                                 </li><li>
                                     <p><a href="https://www.discogs.com/artist/4933932-Niko-Battistini">Niko Battistini</a><br />Mixed by [Mix Assistance]</p>
                                 </li>
                             </ul>
-                        </li><li class="credit_item">
-                            <ul class="credit_desc">
+                        </li><li className="credit_item">
+                            <ul className="credit_desc">
                                 <li>
-                                    <a href="../../index.html"><img src="../../images/ag_sun.jpg" alt="Picture of A. G. Cook" /></a>
+                                    <a href="../../index.html"><img src="../../images/ag_sun.jpg" alt="A. G. Cook" /></a>
                                 </li><li>
                                     <p><a href="../../index.html">A. G. Cook</a><br />Producer</p>
                                 </li>
@@ -113,212 +132,218 @@ class Apple extends React.Component {
                     </ul>
                 </section>
 
-                <nav class="version_nav">
+                <nav className="version_nav">
                     <h2>Versions</h2>
-                    <button onclick="window.location.href='#';">Filter by<i class="fa-solid fa-angle-down"></i></button> 
+                    <button>Filter by<FontAwesomeIcon icon={faAngleDown} /></button> 
                 </nav>
 
-                <div class="versions">
-                    <div class="background">
-                        <div class="preheader">
+                <div className="versions">
+                    <div className="background">
+                        <div className="preheader">
                             <p>2 versions</p>
-                            <button onclick="window.location.href='#';">Add to Wantlist<i class="fa-solid fa-angle-down"></i></button>
+                            <button>Add to Wantlist<FontAwesomeIcon icon={faAngleDown} /></button>
                         </div>
 
                         <table>
-                            <thead class="thead">
+                            <thead className="thead">
                                 <tr>
-                                    <th colspan="2">Title, Format</th>
+                                    <th colSpan="2">Title, Format</th>
                                     <th>Label, Catalog Number</th>
                                     <th>Country</th>
-                                    <th colspan="2">Year</th>
+                                    <th colSpan="2">Year</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img class="middle" src="../../images/apple.jpg" alt="Album cover of Apple" width="90" height="90" /></td>
-                                    <td><a class="bold" href="https://www.discogs.com/release/15793595-A-G-Cook-Apple">Apple</a><br />10xFile, MP3, Album, 320 kbps</td>
+                                    <td><img className="middle" src="../../images/apple.jpg" alt="Album cover of Apple" width="90" height="90" /></td>
+                                    <td><a className="bold" href="https://www.discogs.com/release/15793595-A-G-Cook-Apple">Apple</a><br />10xFile, MP3, Album, 320 kbps</td>
                                     <td><a href="https://www.discogs.com/label/631074-PC-Music-3">PC Music</a>, PC0APPLE</td>
                                     <td>UK</td>
                                     <td>2020</td>
-                                    <td><button onclick="window.location.href='#';" class="expand"><i class="fa-solid fa-angle-down"></i></button></td>
+                                    <td><button className="expand"><FontAwesomeIcon className="expandicon" icon={faAngleDown} /></button></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="middle" src="../../images/apple_lp.jpg" alt="Album cover of Apple LP" width="90" height="90" /></td>
-                                    <td><a class="bold" href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple</a><br />LP, Album, Stereo</td>
+                                    <td><img className="middle" src="../../images/apple_lp.jpg" alt="Album cover of Apple LP" width="90" height="90" /></td>
+                                    <td><a className="bold" href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple</a><br />LP, Album, Stereo</td>
                                     <td><a href="https://www.discogs.com/label/631074-PC-Music-3">PC Music</a>, PC0APPLE</td>
                                     <td>UK</td>
                                     <td>2021</td>
-                                    <td><button onclick="window.location.href='#';" class="expand"><i class="fa-solid fa-angle-down"></i></button></td>
+                                    <td><button className="expand"><FontAwesomeIcon className="expandicon" icon={faAngleDown} /></button></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <section class="recommendations">
+                <section className="recommendations">
                     <h2>Recommendations</h2>
                     
-                    <div class="slideshow">
-                        <div class="arrow">
-                            <a href="javascript:void(0);" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left fa-xl"></i></a>
-                        </div><div class="discography" id="slides">
-                            <div class="slide fade">
+                    <div className="slideshow transform">
+                        <div className="arrow">
+                            <a href="#" /*onClick={plusSlides(-1)}*/><FontAwesomeIcon icon={faAngleLeft} size="xl" /></a>
+                        </div><div className="" id="slides">
+                            <div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/1787603-A-G-Cook-7G"><img src="../../images/7g.jpg" alt="Album cover of 7G" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/1787603-A-G-Cook-7G">7G</a><br /><a href="../../index.html">A. G. Cook</a>
+                                        <a className="bold" href="https://www.discogs.com/master/1787603-A-G-Cook-7G">7G</a><br /><a href="../../index.html">A. G. Cook</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/release/16800267-Planet-1999-Devotion-Deluxe"><img src="../../images/devotion_(deluxe).jpg" alt="Album cover of Devotion (Deluxe)" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/release/16800267-Planet-1999-Devotion-Deluxe">Devotion (Deluxe)</a><br /><a href="https://www.discogs.com/artist/7354961-Planet-1999">Planet 1999</a>
+                                        <a className="bold" href="https://www.discogs.com/release/16800267-Planet-1999-Devotion-Deluxe">Devotion (Deluxe)</a><br /><a href="https://www.discogs.com/artist/7354961-Planet-1999">Planet 1999</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/2980216-Caroline-Polachek-Desire-I-Want-To-Turn-Into-You"><img src="../../images/desire,_i_want_to_turn_into_you.jpg" alt="Album cover of Desire, I Want To Turn Into You" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/2980216-Caroline-Polachek-Desire-I-Want-To-Turn-Into-You">Desire, I Want To Turn Into You</a><br /><a href="https://www.discogs.com/artist/1269616-Caroline-Polachek">Caroline Polachek</a>
+                                        <a className="bold" href="https://www.discogs.com/master/2980216-Caroline-Polachek-Desire-I-Want-To-Turn-Into-You">Desire, I Want To Turn Into You</a><br /><a href="https://www.discogs.com/artist/1269616-Caroline-Polachek">Caroline Polachek</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/release/24935812-Doss-4-New-Hit-Songs-Remixes"><img src="../../images/4NHS_Remixes.jpeg" alt="Album cover of 4 New Hit Songs Remixes" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/release/24935812-Doss-4-New-Hit-Songs-Remixes">4 New Hit Songs Remixes</a><br /><a href="https://www.discogs.com/artist/3814699-Doss-2">Doss</a>
+                                        <a className="bold" href="https://www.discogs.com/release/24935812-Doss-4-New-Hit-Songs-Remixes">4 New Hit Songs Remixes</a><br /><a href="https://www.discogs.com/artist/3814699-Doss-2">Doss</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/2303896-A-G-Cook-Superstar"><img src="../../images/superstar.jpg" alt="Album cover of Superstar" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/2303896-A-G-Cook-Superstar">Superstar</a><br /><a href="../../index.html">A. G. Cook</a>
+                                        <a className="bold" href="https://www.discogs.com/master/2303896-A-G-Cook-Superstar">Superstar</a><br /><a href="../../index.html">A. G. Cook</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/release/6674464-A-G-Cook-Featuring-Hannah-Diamond-Drop-FM"><img src="../../images/drop_fm.jpg" alt="Album cover of Drop FM" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/release/6674464-A-G-Cook-Featuring-Hannah-Diamond-Drop-FM">Drop FM</a><br /><a href="../../index.html">A. G. Cook</a>
+                                        <a className="bold" href="https://www.discogs.com/release/6674464-A-G-Cook-Featuring-Hannah-Diamond-Drop-FM">Drop FM</a><br /><a href="../../index.html">A. G. Cook</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/release/12137145-Sophie-Oil-Of-Every-Pearls-Un-Insides"><img src="../../images/oil_of_every_pearls_un-insides.jpg" alt="Album cover of Oil of Every Pearl's Un-Insides" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/release/12137145-Sophie-Oil-Of-Every-Pearls-Un-Insides">Oil of Every Pearl's Un-Insides</a><br /><a href="https://www.discogs.com/artist/3150192-Sophie-42">SOPHIE</a>
+                                        <a className="bold" href="https://www.discogs.com/release/12137145-Sophie-Oil-Of-Every-Pearls-Un-Insides">Oil of Every Pearl's Un-Insides</a><br /><a href="https://www.discogs.com/artist/3150192-Sophie-42">SOPHIE</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/2630819-Various-Volume-3"><img src="../../images/pc_music_vol.3.jpeg" alt="Album cover of Volume 3" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/2630819-Various-Volume-3">Volume 3</a><br /><a href="https://www.discogs.com/label/631074-PC-Music-3">PC Music</a>
+                                        <a className="bold" href="https://www.discogs.com/master/2630819-Various-Volume-3">Volume 3</a><br /><a href="https://www.discogs.com/label/631074-PC-Music-3">PC Music</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/1647730-Hannah-Diamond-Reflections"><img src="../../images/reflections.jpg" alt="Album cover of reflections" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/1647730-Hannah-Diamond-Reflections">Reflections</a><br /><a href="https://www.discogs.com/artist/3859775-Hannah-Diamond">Hannah Diamond</a>
+                                        <a className="bold" href="https://www.discogs.com/master/1647730-Hannah-Diamond-Reflections">Reflections</a><br /><a href="https://www.discogs.com/artist/3859775-Hannah-Diamond">Hannah Diamond</a>
                                     </figcaption>
                                 </figure>
-                            </div><div class="slide fade">
+                            </div><div className="slide fade">
                                 <figure>
                                     <a href="https://www.discogs.com/master/2849974-%C3%96-Hypernormality"><img src="../../images/hypernormality.jpg" alt="Album cover of Hypernormality" width="150" height="150" /></a>
                                     <figcaption>
-                                        <a class="bold" href="https://www.discogs.com/master/2849974-%C3%96-Hypernormality">Hypernormality</a><br /><a href="https://www.discogs.com/artist/6642733-%C3%96-3">Ö</a>
+                                        <a className="bold" href="https://www.discogs.com/master/2849974-%C3%96-Hypernormality">Hypernormality</a><br /><a href="https://www.discogs.com/artist/6642733-%C3%96-3">Ö</a>
                                     </figcaption>
                                 </figure>
                             </div>
-                        </div><div class="arrow">
-                            <a href="javascript:void(0);" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right fa-xl"></i></a>
+                        </div><div className="arrow">
+                            <a href="#" /*onClick={plusSlides(1)}*/><FontAwesomeIcon icon={faAngleRight} size="xl" /></a>
                         </div>
                     </div>
                     <div id="dots">
-                        <span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
-                        </span><span class="dot">
+                        <span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
+                        </span><span className="dot">
                         </span>
                     </div>
                 </section>
 
-                <section class="reviews">
+                <section className="reviews">
                     <h2>Reviews</h2>
-                    <button onclick="window.location.href='#';">Add review<i class="fa-solid fa-plus"></i></button>
+                    <button>Add review<FontAwesomeIcon icon={faPlus} /></button>
                     <ul>
                         <li>
                             <table>
-                                <tr>
-                                    <td><img src="../../images/profile.png" alt="Profile picture" width="40" height="40" /></td>
-                                    <td>User Name | Date<br /><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i></td>
-                                </tr>
-                                <tr>
-                                    <td></td><td class="ref">referencing <a href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple (LP, Album, Stereo) PC0APPLE</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td><td><p>One of my favorite albums, and a damn good pressing of it. Sounds excellent, especially impressive with insanely dynamic stuff like “Xxoplexx”. There's two great bonus tracks that are vinyl only, and the overall package and alternate cover, gatefold, poster, and lyric booklet are truly aesthetically pleasing and wonderful. Love it.</p></td>
-                                </tr>
-                                <tr class="endrow">
-                                    <td></td><td><a href="#"><i class="fa-solid fa-reply"></i>Reply</a></td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="../../images/profile.png" alt="Profile icon" width="40" height="40" /></td>
+                                        <td>User Name | Date<br /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td><td className="ref">referencing <a href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple (LP, Album, Stereo) PC0APPLE</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td><td><p>One of my favorite albums, and a damn good pressing of it. Sounds excellent, especially impressive with insanely dynamic stuff like “Xxoplexx”. There's two great bonus tracks that are vinyl only, and the overall package and alternate cover, gatefold, poster, and lyric booklet are truly aesthetically pleasing and wonderful. Love it.</p></td>
+                                    </tr>
+                                    <tr className="endrow">
+                                        <td></td><td><a href="#"><FontAwesomeIcon icon={faReply} />Reply</a></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </li><li>
                             <table>
-                                <tr>
-                                    <td><img src="../../images/profile.png" alt="Profile picture" width="40" height="40" /></td>
-                                    <td>User Name | Date<br /><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i><i class="fa-solid fa-star fa-xs"></i></td>
-                                </tr>
-                                <tr>
-                                    <td></td><td class="ref">referencing <a href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple (LP, Album, Stereo) PC0APPLE</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td><td><p>this is legit the most beautiful packaging i've seen on vinyl. from the details in the cover, the huge foldout poster, the silver printed booklet... i'm very impressed! Also, the sound sounds just fantastic to me.</p></td>
-                                </tr>
-                                <tr class="endrow">
-                                    <td></td><td><a href="#"><i class="fa-solid fa-reply"></i>Reply</a></td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="../../images/profile.png" alt="Profile icon" width="40" height="40" /></td>
+                                        <td>User Name | Date<br /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /><FontAwesomeIcon icon={faStar} size="xs" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td><td className="ref">referencing <a href="https://www.discogs.com/release/15795185-A-G-Cook-Apple">Apple (LP, Album, Stereo) PC0APPLE</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td><td><p>this is legit the most beautiful packaging i've seen on vinyl. from the details in the cover, the huge foldout poster, the silver printed booklet... i'm very impressed! Also, the sound sounds just fantastic to me.</p></td>
+                                    </tr>
+                                    <tr className="endrow">
+                                        <td></td><td><a href="#"><FontAwesomeIcon icon={faReply} />Reply</a></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </li>
                     </ul>
                 </section>
 
-                <aside class="statistics">
+                <aside className="statistics">
                     <h2>Statistics</h2>
                     <table>
-                        <tr>
-                            <td><p class="left_aligned">Have</p></td>
-                            <td><p class="right_aligned">579</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="left_aligned">Want</p></td>
-                            <td><p class="right_aligned">283</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="left_aligned">Avg rating</p></td>
-                            <td><p class="right_aligned">4.63 / 5</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="left_aligned">Ratings</p></td>
-                            <td><p class="right_aligned">49</p></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><p className="left_aligned">Have</p></td>
+                                <td><p className="right_aligned">579</p></td>
+                            </tr>
+                            <tr>
+                                <td><p className="left_aligned">Want</p></td>
+                                <td><p className="right_aligned">283</p></td>
+                            </tr>
+                            <tr>
+                                <td><p className="left_aligned">Avg rating</p></td>
+                                <td><p className="right_aligned">4.63 / 5</p></td>
+                            </tr>
+                            <tr>
+                                <td><p className="left_aligned">Ratings</p></td>
+                                <td><p className="right_aligned">49</p></td>
+                            </tr>
+                        </tbody>
                     </table>
 
                     <ul>
                         <li>
-                            <button onclick="window.location.href='#';">Lists<i class="fa-solid fa-angle-right"></i></button>
+                            <button>Lists<FontAwesomeIcon icon={faAngleRight} /></button>
                         </li><li>
-                            <button onclick="window.location.href='#';">Videos<i class="fa-solid fa-angle-right"></i></button>
+                            <button>Videos<FontAwesomeIcon icon={faAngleRight} /></button>
                         </li>
                     </ul>
                 </aside>

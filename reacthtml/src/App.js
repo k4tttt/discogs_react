@@ -7,9 +7,7 @@ import Footer from './components/Footer';
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import './styles/common.css';
-//import './styles/styles_artist.css';
-//import './styles/styles_discography.css'
+import './App.css';
 
 function App() {
   return (
@@ -17,9 +15,9 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route path="/albums" element={<Albums/>}/>
-          <Route path="/apple" element={<Apple/>}/>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/albums" element={<Albums />} />
+          <Route path="/apple" element={<Apple />} />
         </Routes>
         <Footer />
       </Router>
