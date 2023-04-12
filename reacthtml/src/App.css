@@ -55,6 +55,20 @@ input {
 
 input:focus {color: black;}
 
+.link_button {
+    color: black;
+    font-weight: bold;
+    background: none!important;
+    border: none!important;
+    padding: 0!important;
+}
+
+.link_button:hover {text-decoration: underline 1.5px;}
+
+.header .link_button {color: white; font-weight: normal;}
+.header .link_button:hover {opacity: 0.75; text-decoration: none;}
+
+
 .transform a:hover {text-decoration: underline;}
 .transform img {transition: 0.2s;}
 .transform img:hover {transform: scale(1.015);}

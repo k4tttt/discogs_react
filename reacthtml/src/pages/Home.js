@@ -84,23 +84,23 @@ class Home extends React.Component {
 
                 <figure>
                     <figcaption>
-                        <h2><a href="#">Singles & EPs</a></h2>
+                        <h2><button className="link_button">Singles & EPs</button></h2>
                     </figcaption>      
-                    <a href="#"><img className="responsive" src="images/singles_EPs.png" alt="Singles and EPs" height="270" width="270" /></a>
+                    <button className="link_button"><img className="responsive" src="images/singles_EPs.png" alt="Singles and EPs" height="270" width="270" /></button>
                 </figure>
 
                 <figure>
                     <figcaption>
-                        <h2><a href="#">DJ Mixes</a></h2>
+                        <h2><button className="link_button">DJ Mixes</button></h2>
                     </figcaption>
-                    <a href="#"><img className="responsive" src="images/DJ_mixes.png" alt="DJ mixes" height="270" width="270" /></a>
+                    <button className="link_button"><img className="responsive" src="images/DJ_mixes.png" alt="DJ mixes" height="270" width="270" /></button>
                 </figure>
 
                 <figure>
                     <figcaption>
-                        <h2><a href="#">Full Discography</a></h2>
+                        <h2><button className="link_button">Full Discography</button></h2>
                     </figcaption>
-                    <a href="#"><img className="responsive" src="images/full_discography.png" alt="Full discography" height="270" width="270" /></a>
+                    <button className="link_button"><img className="responsive" src="images/full_discography.png" alt="Full discography" height="270" width="270" /></button>
                 </figure>
             </section>
 

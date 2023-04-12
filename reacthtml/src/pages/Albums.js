@@ -37,9 +37,9 @@ class Albums extends React.Component {
 
                 <section className="albumgallery transform">
                     <figure>
-                        <a href="#"><img className="responsive" src="../images/apple_vs_7g.png" alt="Album cover of Apple vs. 7G" height="270" width="270" /></a>
+                        <button className="link_button"><img className="responsive" src="../images/apple_vs_7g.png" alt="Album cover of Apple vs. 7G" height="270" width="270" /></button>
                         <figcaption>
-                            <h2><a href="#">Apple vs. 7G</a></h2>
+                            <h2><button className="link_button">Apple vs. 7G</button></h2>
                             <p>2021</p>
                         </figcaption>
                     </figure>
@@ -53,9 +53,9 @@ class Albums extends React.Component {
                     </figure>
         
                     <figure>
-                        <a href="#"><img className="responsive" src="../images/7g.png" alt="Album cover of 7G" height="270" width="270" /></a>
+                        <button className="link_button"><img className="responsive" src="../images/7g.png" alt="Album cover of 7G" height="270" width="270" /></button>
                         <figcaption>
-                            <h2><a href="#">7G</a></h2>
+                            <h2><button className="link_button">7G</button></h2>
                             <p>2020</p>
                         </figcaption>
                     </figure>

@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleRight, faAngleLeft, faPlus, faStar, faReply } from '@fortawesome/free-solid-svg-icons';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Config from "../Config.json";
+import $ from 'jquery';
 
-const TITLE = "Apple | A. G. Cook | " + Config.SITE_TITLE;
+const TITLE = "Apple | A. G. Cook | " + Config.SITE_TITLE;
 const AUTHOR = Config.AUTHOR;
 
 class Apple extends React.Component {
+    componentDidMount() {
+        itemsPerSlide();
+    }
+
     render() {
         return(
             <main id="apple">
@@ -180,7 +184,7 @@ class Apple extends React.Component {
                     
                     <div className="slideshow transform">
                         <div className="arrow">
-                            <a href="#" /*onClick={plusSlides(-1)}*/><FontAwesomeIcon icon={faAngleLeft} size="xl" /></a>
+                            <button className="link_button" /*onClick={plusSlides(-1)}*/><FontAwesomeIcon icon={faAngleLeft} size="xl" /></button>
                         </div><div className="" id="slides">
                             <div className="slide fade">
                                 <figure>
@@ -254,7 +258,7 @@ class Apple extends React.Component {
                                 </figure>
                             </div>
                         </div><div className="arrow">
-                            <a href="#" /*onClick={plusSlides(1)}*/><FontAwesomeIcon icon={faAngleRight} size="xl" /></a>
+                            <button className="link_button" /*onClick={plusSlides(1)}*/><FontAwesomeIcon icon={faAngleRight} size="xl" /></button>
                         </div>
                     </div>
                     <div id="dots">
@@ -290,7 +294,7 @@ class Apple extends React.Component {
                                         <td></td><td><p>One of my favorite albums, and a damn good pressing of it. Sounds excellent, especially impressive with insanely dynamic stuff like “Xxoplexx”. There's two great bonus tracks that are vinyl only, and the overall package and alternate cover, gatefold, poster, and lyric booklet are truly aesthetically pleasing and wonderful. Love it.</p></td>
                                     </tr>
                                     <tr className="endrow">
-                                        <td></td><td><a href="#"><FontAwesomeIcon icon={faReply} />Reply</a></td>
+                                        <td></td><td><button className="link_button"><FontAwesomeIcon icon={faReply} />Reply</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -308,7 +312,7 @@ class Apple extends React.Component {
                                         <td></td><td><p>this is legit the most beautiful packaging i've seen on vinyl. from the details in the cover, the huge foldout poster, the silver printed booklet... i'm very impressed! Also, the sound sounds just fantastic to me.</p></td>
                                     </tr>
                                     <tr className="endrow">
-                                        <td></td><td><a href="#"><FontAwesomeIcon icon={faReply} />Reply</a></td>
+                                        <td></td><td><button className="link_button"><FontAwesomeIcon icon={faReply} />Reply</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -353,3 +357,98 @@ class Apple extends React.Component {
 }
 
 export default Apple;
+
+
+/*------------------- SLIDESHOW ------------------*/
+let slideIndex = 1;
+let numItemsPerSlide;
+
+$(document).ready(function() {
+  if (document.getElementById("apple")) {
+      window.addEventListener('resize', itemsPerSlide);
+      itemsPerSlide();
+  }
+});
+
+/**
+* Determine the number of items per slide, depending on
+* the screen width.
+*/
+function itemsPerSlide() {
+  if (document.documentElement.clientWidth >= 1150) {
+      numItemsPerSlide = 5;
+  } else {
+      if (document.documentElement.clientWidth < 1150) {
+          numItemsPerSlide = 4;
+      }
+      if (document.documentElement.clientWidth < 930) {
+          numItemsPerSlide = 3;
+      }
+      if (document.documentElement.clientWidth < 720) {
+          numItemsPerSlide = 2;
+      }
+      if (document.documentElement.clientWidth < 510) {
+          numItemsPerSlide = 1;
+      }
+  }
+  
+  showSlides(slideIndex);
+}
+
+/**
+* Change which slide is showing in the slideshow.
+* @param {*} n indicates how many steps the slideshow should move.
+*/
+/*
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}*/
+
+/**
+* Set which slide to be shown, and hide the remaining ones. Also 
+* display the correct amount of dots.
+* @param {*} n index of slide to be shown.
+*/
+function showSlides(n) {
+  let dots = document.getElementsByClassName("dot");
+  let allSlides = Array.from(document.getElementsByClassName("slide"));
+  let slides = [];
+
+  // Split all slides into sections with correct number of items
+  for (let i = 0; i < (allSlides.length)/numItemsPerSlide; i++) {
+      let currentItems = allSlides.slice(i*numItemsPerSlide, i*numItemsPerSlide+numItemsPerSlide);
+      slides.push(currentItems);
+  }
+  
+  // Make the slideshow loopable
+  if (n > slides.length) {slideIndex = 1;}    
+  if (n < 1) {slideIndex = slides.length;}
+
+  // Hide all dots
+  for (let i = 0; i < dots.length; i++) {
+      dots[i].style.display = "none";
+  }
+
+  // Set all items to hidden and display correct amount of dots
+  for (let i = 0; i < slides.length; i++) {
+      dots[i].style.display = "inline-block";
+      dots[i].className = dots[i].className.replace(" active", "");
+      let currentSlide = slides[i];
+      
+      for (let j = 0; j < currentSlide.length; j++) {
+          currentSlide[j].style.display = "none";
+      }
+  }
+
+  // Display only the correct slide
+  dots[slideIndex - 1].className += " active";
+  let displaySlide = slides[slideIndex - 1];
+  
+  for (let i = 0; i < displaySlide.length; i++) {
+      displaySlide[i].style.display = "inline-block";
+  }
+
+  // Set the correct width for the slide container and dots
+  document.getElementById("slides").style.width = numItemsPerSlide*190 + "px";
+  document.getElementById("dots").style.width = (numItemsPerSlide*190 + 37.75*2) + "px";
+}

@@ -18,17 +18,17 @@ class Header extends React.Component {
                         <FontAwesomeIcon className="fa-solid fa-magnifying-glass" icon={faMagnifyingGlass} />
                     </div>
 
-                    <a className="hamburger" href="#"><FontAwesomeIcon icon={faBars} size="lg" /></a>
+                    <button className="hamburger link_button"><FontAwesomeIcon icon={faBars} size="lg" /></button>
                 </div>
                 
                 <nav className="topnav1">
                     <ul>
                         <li>
-                            <a href="#">Explore<FontAwesomeIcon icon={faAngleDown} /></a>
+                            <button className="link_button">Explore<FontAwesomeIcon icon={faAngleDown} /></button>
                         </li><li>
-                            <a href="#">Marketplace<FontAwesomeIcon icon={faAngleDown} /></a>
+                            <button className="link_button">Marketplace<FontAwesomeIcon icon={faAngleDown} /></button>
                         </li><li>
-                            <a href="#">Community<FontAwesomeIcon icon={faAngleDown} /></a>
+                            <button className="link_button">Community<FontAwesomeIcon icon={faAngleDown} /></button>
                         </li>
                     </ul>
                 </nav>
@@ -36,9 +36,9 @@ class Header extends React.Component {
                 <nav className="topnav2">
                     <ul>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faCartShopping} /></a>
+                            <button className="link_button"><FontAwesomeIcon icon={faCartShopping} /></button>
                         </li><li>
-                            <a href="#">Log in</a>
+                            <button className="link_button">Log in</button>
                         </li><li>
                             <button>Register</button>
                         </li>
