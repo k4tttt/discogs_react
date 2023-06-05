@@ -17,7 +17,7 @@ h2 {
     font-weight: bold;
 }
 
-p, a, span, td, th, label {
+p, a, span, td, th, label, ul {
     font-family: "Arial", sans-serif;
     color: black;
     font-size: 14px;
@@ -50,7 +50,7 @@ input {
     outline: none;
     padding: 10px;
     padding-right: 60px;
-    color: #D0D0D0;
+    color: #bababa;
 }
 
 input:focus {color: black;}
@@ -276,20 +276,13 @@ input:focus {color: black;}
 
 .form {
     grid-column: 1/5; grid-row: 3/4;
-    padding-left: 5%;
+    padding-left: 5%; padding-right: 5%;
     padding-bottom: 30px;
 }
 
-.background {
-    background-color: #E3E3E3;
-    width: 70%;
-    padding: 14px 20px;
-    border-radius: 2px;
-}
-
-.form input[type=text]{width: 75%; margin: 10px 0px;}
+.form input[type=text]{width: 200px; margin: 10px 0px;}
 .form input[type=text]:focus{outline: 2px solid #8888FF;}
-.form input[type=checkbox] {width: auto; margin: 10px 0px;}
+.form input[type=checkbox] {width: auto; margin: 10px 4px;}
 
 .form input[type=submit] {
     background-color: #8888FF;
@@ -368,6 +361,49 @@ input:focus {color: black;}
 .footer { grid-column: 1/5; }
 #draggable {cursor: pointer;}
 
+.interaction {
+    grid-column: 1/5; grid-row: 4/5;
+    padding: 24px 3% 34px 3%;
+    margin: 0 5% 50px 5%;
+    background-color: #EEEEFF;
+}
+
+.interaction input {
+    width: 300px;
+    border: 1px solid #CCCCFF;
+    margin-right: 12px;
+}
+
+.interaction ul {margin: 0; padding-left: 26px;}
+.interaction li {padding: 8px;}
+
+#btn_black {
+    background-color: #3e3e3e;
+    border-bottom: 4px solid #000;
+    margin-right: 16px;
+}
+
+#btn_blue {
+    background-color: #4e4efc;
+    border-bottom: 4px solid #0000ff;
+    margin-right: 16px;
+}
+
+#btn_pink {
+    background-color: #ff6dd6;
+    border-bottom: 4px solid #FF00B8;
+    margin-right: 16px;
+}
+
+#btn_orange {
+    background-color: #ff964a;
+    border-bottom: 4px solid #FF6B00;
+}
+
+#btn_black:hover {background-color: #000;}
+#btn_blue:hover {background-color: #0000ff; border-bottom: 4px solid #000089;}
+#btn_pink:hover {background-color: #FF00B8; border-bottom: 4px solid #dd019f;}
+#btn_orange:hover {background-color: #FF6B00; border-bottom: 4px solid #d35800;}
 
 @media screen and (max-width: 800px) {
     /*
@@ -447,6 +483,13 @@ input:focus {color: black;}
 
     .links li:nth-child(5) {padding-left: 0px;}
 
+    .interaction {
+        grid-row: 7/8; grid-column: 1/2;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .interaction input {width: 150px;}
     /*
     .footer { grid-row: 8/9; grid-column: 1/2; }*/
 }
@@ -642,7 +685,7 @@ input:focus {color: black;}
 }
 
 .background {
-    background-color: #E3E3E3;
+    background-color: #EEEEFF;
     width: 75%;
     padding: 14px 20px;
     border-radius: 2px;
