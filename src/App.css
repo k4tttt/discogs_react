@@ -194,6 +194,7 @@ input:focus {color: black;}
 @media screen and (max-width: 520px) {
     .header input {width: 120px;}
     .fa-magnifying-glass {margin-left: 160px;}
+    .logo {width: 69px; height: 25px;}
 }
 
 /*------- PAGE NAVIGATION ------*/
