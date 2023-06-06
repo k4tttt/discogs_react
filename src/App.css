@@ -192,8 +192,8 @@ input:focus {color: black;}
 }
 
 @media screen and (max-width: 520px) {
-    .header input {width: 150px;}
-    .fa-magnifying-glass {margin-left: 190px;}
+    .header input {width: 120px;}
+    .fa-magnifying-glass {margin-left: 160px;}
 }
 
 /*------- PAGE NAVIGATION ------*/
@@ -913,7 +913,7 @@ input:focus {color: black;}
     .recommendations {
         grid-row: 7/8; grid-column: 1/2;
         display: inline;
-        vertical-align: middle;
+        /*vertical-align: middle;*/
         margin: auto;
     }
 
