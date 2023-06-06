@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleRight, faAngleLeft, faPlus, faStar, faReply } from '@fortawesome/free-solid-svg-icons';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -28,11 +29,11 @@ class Apple extends React.Component {
                 <nav className="page_nav">
                     <ul>
                         <li>
-                            <a href="../../">A. G. Cook</a>
+                            <Link to="../../">A. G. Cook</Link>
                         </li><li>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </li><li>
-                            <a href="../albums">Albums</a>
+                            <Link to="../albums">Albums</Link>
                         </li><li>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </li><li>
