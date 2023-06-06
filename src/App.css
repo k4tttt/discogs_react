@@ -406,21 +406,11 @@ input:focus {color: black;}
 #btn_orange:hover {background-color: #FF6B00; border-bottom: 4px solid #d35800;}
 
 @media screen and (max-width: 800px) {
-    /*
-    .container {
-        display: grid;
-        grid-template-rows: minmax(70px, auto) auto 400px;
-        grid-template-columns: 1fr;
-    }*/
-
     #home {
         display: grid;
         grid-template-rows: auto auto 0px auto auto auto;
         grid-template-columns: 1fr;
     }
-
-    /*
-    .header { grid-row: 1/2; grid-column: 1/2; }*/
     
     .picture {
         grid-row: 1/2; grid-column: 1/2;
